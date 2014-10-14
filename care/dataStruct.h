@@ -26,6 +26,9 @@
 #endif
 
 
+
+#define CELL_HEIGHT  75.0f
+
 @interface dataStruct : NSObject
 
 @end

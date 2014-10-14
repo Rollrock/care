@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481533BE19ECD3EF00A98631 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 481533BC19ECD3EF00A98631 /* MyTableViewCell.m */; };
+		481533BF19ECD3EF00A98631 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 481533BD19ECD3EF00A98631 /* MyTableViewCell.xib */; };
+		481533C619ED5C6C00A98631 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 481533C319ED5C6C00A98631 /* EGOCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		481533C719ED5C6C00A98631 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 481533C519ED5C6C00A98631 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		481533C919ED61C200A98631 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 481533C819ED61C200A98631 /* blueArrow@2x.png */; };
+		481533CC19ED6BCC00A98631 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481533CB19ED6BCC00A98631 /* FirstViewController.m */; };
 		48B66DB219EACA7E00751B08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B66DB119EACA7E00751B08 /* main.m */; };
 		48B66DB519EACA7E00751B08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B66DB419EACA7E00751B08 /* AppDelegate.m */; };
 		48B66DBD19EACA7E00751B08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B66DBC19EACA7E00751B08 /* Images.xcassets */; };
 		48B66DC019EACA7E00751B08 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B66DBE19EACA7E00751B08 /* LaunchScreen.xib */; };
 		48B66DCC19EACA7E00751B08 /* careTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B66DCB19EACA7E00751B08 /* careTests.m */; };
 		48B66E1719EBFF9000751B08 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B66E1619EBFF9000751B08 /* MainViewController.m */; };
-		48B66E1A19EC00E200751B08 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B66E1919EC00E200751B08 /* FirstViewController.m */; };
 		48B66E1D19EC00ED00751B08 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B66E1C19EC00ED00751B08 /* SecondViewController.m */; };
 		48B66E2019EC054500751B08 /* dataStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B66E1F19EC054500751B08 /* dataStruct.m */; };
 		48B66E2319EC05B900751B08 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B66E2219EC05B900751B08 /* CenterViewController.m */; };
@@ -45,6 +50,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		481533BB19ECD3EF00A98631 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		481533BC19ECD3EF00A98631 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		481533BD19ECD3EF00A98631 /* MyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		481533C219ED5C6C00A98631 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
+		481533C319ED5C6C00A98631 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
+		481533C419ED5C6C00A98631 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		481533C519ED5C6C00A98631 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		481533C819ED61C200A98631 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		481533CA19ED6BCC00A98631 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		481533CB19ED6BCC00A98631 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		48B66DAC19EACA7E00751B08 /* care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = care.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B66DB019EACA7E00751B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48B66DB119EACA7E00751B08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,8 +72,6 @@
 		48B66DCB19EACA7E00751B08 /* careTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = careTests.m; sourceTree = "<group>"; };
 		48B66E1519EBFF9000751B08 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		48B66E1619EBFF9000751B08 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		48B66E1819EC00E200751B08 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		48B66E1919EC00E200751B08 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		48B66E1B19EC00ED00751B08 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		48B66E1C19EC00ED00751B08 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		48B66E1E19EC054500751B08 /* dataStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataStruct.h; sourceTree = "<group>"; };
@@ -103,6 +116,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		481533C019ED5C6C00A98631 /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+				481533C119ED5C6C00A98631 /* EGO */,
+			);
+			path = 3rd;
+			sourceTree = "<group>";
+		};
+		481533C119ED5C6C00A98631 /* EGO */ = {
+			isa = PBXGroup;
+			children = (
+				481533C219ED5C6C00A98631 /* EGOCache.h */,
+				481533C319ED5C6C00A98631 /* EGOCache.m */,
+				481533C419ED5C6C00A98631 /* EGORefreshTableHeaderView.h */,
+				481533C519ED5C6C00A98631 /* EGORefreshTableHeaderView.m */,
+			);
+			path = EGO;
+			sourceTree = "<group>";
+		};
 		48B66DA319EACA7E00751B08 = {
 			isa = PBXGroup;
 			children = (
@@ -133,10 +165,10 @@
 				48B66E1619EBFF9000751B08 /* MainViewController.m */,
 				48B66E1E19EC054500751B08 /* dataStruct.h */,
 				48B66E1F19EC054500751B08 /* dataStruct.m */,
+				481533CA19ED6BCC00A98631 /* FirstViewController.h */,
+				481533CB19ED6BCC00A98631 /* FirstViewController.m */,
 				48B66E2119EC05B900751B08 /* CenterViewController.h */,
 				48B66E2219EC05B900751B08 /* CenterViewController.m */,
-				48B66E1819EC00E200751B08 /* FirstViewController.h */,
-				48B66E1919EC00E200751B08 /* FirstViewController.m */,
 				48B66E1B19EC00ED00751B08 /* SecondViewController.h */,
 				48B66E1C19EC00ED00751B08 /* SecondViewController.m */,
 				48B66E2419EC05D400751B08 /* ThirdViewController.h */,
@@ -145,6 +177,9 @@
 				48B66E2819EC05E600751B08 /* FourthViewController.m */,
 				48B66E2A19EC064800751B08 /* tabbarView.h */,
 				48B66E2B19EC064800751B08 /* tabbarView.m */,
+				481533BB19ECD3EF00A98631 /* MyTableViewCell.h */,
+				481533BC19ECD3EF00A98631 /* MyTableViewCell.m */,
+				481533BD19ECD3EF00A98631 /* MyTableViewCell.xib */,
 			);
 			path = care;
 			sourceTree = "<group>";
@@ -152,6 +187,7 @@
 		48B66DAF19EACA7E00751B08 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				481533C019ED5C6C00A98631 /* 3rd */,
 				48B66E2D19EC06B000751B08 /* resource */,
 				48B66DB019EACA7E00751B08 /* Info.plist */,
 				48B66DB119EACA7E00751B08 /* main.m */,
@@ -188,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				48B66E4319EC075C00751B08 /* tabbar_mainbtn.png */,
+				481533C819ED61C200A98631 /* blueArrow@2x.png */,
 				48B66E4419EC075C00751B08 /* tabbar_mainbtn@2x.png */,
 				48B66E2F19EC06B000751B08 /* tabbar_0.png */,
 				48B66E3019EC06B000751B08 /* tabbar_0@2x.png */,
@@ -295,9 +332,11 @@
 				48B66DBD19EACA7E00751B08 /* Images.xcassets in Resources */,
 				48B66E4119EC06B000751B08 /* tabbar_mainbtn_bg.png in Resources */,
 				48B66E4619EC075C00751B08 /* tabbar_mainbtn@2x.png in Resources */,
+				481533BF19ECD3EF00A98631 /* MyTableViewCell.xib in Resources */,
 				48B66E3919EC06B000751B08 /* tabbar_0.png in Resources */,
 				48B66E3A19EC06B000751B08 /* tabbar_0@2x.png in Resources */,
 				48B66E3F19EC06B000751B08 /* tabbar_4.png in Resources */,
+				481533C919ED61C200A98631 /* blueArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,8 +361,11 @@
 				48B66E1719EBFF9000751B08 /* MainViewController.m in Sources */,
 				48B66DB219EACA7E00751B08 /* main.m in Sources */,
 				48B66E2919EC05E600751B08 /* FourthViewController.m in Sources */,
-				48B66E1A19EC00E200751B08 /* FirstViewController.m in Sources */,
+				481533CC19ED6BCC00A98631 /* FirstViewController.m in Sources */,
+				481533C619ED5C6C00A98631 /* EGOCache.m in Sources */,
+				481533BE19ECD3EF00A98631 /* MyTableViewCell.m in Sources */,
 				48B66E2C19EC064800751B08 /* tabbarView.m in Sources */,
+				481533C719ED5C6C00A98631 /* EGORefreshTableHeaderView.m in Sources */,
 				48B66E2319EC05B900751B08 /* CenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,7 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = care/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -452,7 +494,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = care/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

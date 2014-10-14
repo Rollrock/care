@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  MyTableViewCell.h
 //  care
 //
 //  Created by zhuang chaoxiao on 14-10-14.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface MyTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *title;
 
 @end

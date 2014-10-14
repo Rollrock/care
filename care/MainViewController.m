@@ -61,7 +61,7 @@
 
 -(void)initSubViewController
 {
-    _firstViewC = [[FirstViewController alloc]initWithNibName:nil bundle:nil];
+    _firstViewC = [[FirstViewController alloc]initWithNibName:@"FirstViewController" bundle:nil];
     _firstNav = [[UINavigationController alloc]init];
     
     if( DEVICE_VER_7 == NO )
