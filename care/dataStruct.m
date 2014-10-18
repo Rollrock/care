@@ -11,3 +11,23 @@
 @implementation dataStruct
 
 @end
+
+
+@implementation ListInfo
+
+
+-(void)parseDict:(NSDictionary*)dict
+{
+    _cate = [dict objectForKey:@"cate"];
+    _brand = [dict objectForKey:@"brand"];
+    _detailUrl = [dict objectForKey:@"detailUrl"];
+    _level = [dict objectForKey:@"level"];
+    _time = [dict objectForKey:@"time"];
+    _title = [dict objectForKey:@"title"];
+    
+    
+    NSLog(@"-%@-%@-%@-%@-%@-%@",_cate,_brand,_detailUrl,_level,_time,_title);
+    
+}
+
+@end

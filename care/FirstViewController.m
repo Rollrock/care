@@ -8,14 +8,24 @@
 
 #import "FirstViewController.h"
 #import "dataStruct.h"
-#import "MyTableViewCell.h"
+#import "MyTableCell.h"
+#import "JSONKit.h"
 #import "EGORefreshTableHeaderView.h"
+#import "DetailViewController.h"
 
-@interface FirstViewController ()<EGORefreshTableHeaderDelegate,UITableViewDataSource,UITableViewDelegate>
+
+#define TARGET_URL   @"http://www.999dh.net/CareAbout/HotList.txt"
+
+@interface FirstViewController ()<EGORefreshTableHeaderDelegate,UITableViewDataSource,UITableViewDelegate,NSURLConnectionDataDelegate,NSURLConnectionDelegate>
 {
     EGORefreshTableHeaderView * _egoView;
     BOOL _reloading;
     UITableView *_tabView;
+    
+    NSURLConnection * _conn;
+    NSMutableData * _data;
+    
+    NSMutableArray * _listArray;
 }
 
 @end
@@ -29,31 +39,97 @@
     [self layoutTableView];
     
     [self layoutEgoView];
+    
+    
+    [self startRequest];
 }
 
 
+-(void)startRequest
+{
+    NSURL * url = [NSURL URLWithString:TARGET_URL];
+    NSURLRequest * req = [NSURLRequest requestWithURL:url];
+    
+    _conn = nil;
+    _conn = [[NSURLConnection alloc]initWithRequest:req delegate:self];
+    
+    _data = nil;
+    _data = [[NSMutableData alloc]init];
+    
+    
+    _listArray = nil;
+    _listArray = [[NSMutableArray alloc]init];
+}
+
+-(void)connection:(NSURLConnection*)connection didReceiveResponse:(NSURLResponse *)response
+{
+    
+}
+
+
+-(void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data
+{
+   //NSLog(@"receData:%@",data);
+    
+    [_data appendData:data];
+}
+
+-(void)connection:(NSURLConnection*)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"conn fail:%@",error);
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSString * str = [[NSString alloc]initWithData:_data encoding:NSUTF8StringEncoding];
+    NSData * data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSDictionary * dict = [data objectFromJSONData];
+    
+     NSLog(@"dict:%@",dict);
+    
+    NSArray * arr = [dict objectForKey:@"info"];
+    
+    if( [arr isKindOfClass:[NSArray class]] )
+    {
+        for( NSDictionary * subDic in arr )
+        {
+            ListInfo * info = [[ListInfo alloc]init];
+            [info parseDict:subDic];
+            
+            [_listArray addObject:info];
+        }
+    }
+    
+    
+    [_tabView reloadData];
+}
+
 -(void)layoutTableView
 {
-    CGRect rect = CGRectMake(0, 64, 320, 400);
+    CGRect rect = CGRectMake(0, 0, 320, SCREEN_HEIGHT-50);
     
     _tabView = [[UITableView alloc]initWithFrame:rect];
     
     _tabView.delegate = self;
     _tabView.dataSource = self;
+    //_tabView.backgroundColor = [UIColor yellowColor];
     
     [self.view addSubview:_tabView];
 }
 
 -(void)layoutEgoView
 {
-    CGRect rect = CGRectMake(0, 0-65, 320, 65);
+    //CGRect rect = CGRectMake(0, -65, 320, 65);
     
-    _egoView = [[EGORefreshTableHeaderView alloc]initWithFrame:rect];
-    [_tabView addSubview:_egoView];
+    //_egoView = [[EGORefreshTableHeaderView alloc]initWithFrame:rect];
+    //[_tabView addSubview:_egoView];
     
-    _egoView.delegate = self;
     
-    // [_egoView refreshLastUpdatedDate];
+    //NSLog(@"--%f----%f",_egoView.frame.origin.y,_egoView.frame.size.height);
+    
+    //_egoView.delegate = self;
+    
 }
 
 //下拉控件刷新触发事件
@@ -72,11 +148,7 @@
 #pragma mark - UIScrollViewDelegate Methods
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    
     [_egoView egoRefreshScrollViewDidScroll:scrollView];
-    
-    
-    NSLog(@"-----");
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
@@ -115,50 +187,55 @@
 
 
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ListInfo * info = [_listArray objectAtIndex:indexPath.row];
+    
+    DetailViewController * vc = [[DetailViewController alloc]initWithNibName:nil bundle:nil];
+    //vc.navigationController.title = info.title;
+    vc.strUrl = info.detailUrl;
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 75.0;
+    return 65;
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 21;
+    return [_listArray count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString * strCellId = @"cellId";
     
-    /*
-    static NSString * strId = @"MyTableViewCell";
-    static BOOL bFlag = YES;
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:strCellId];
     
-    if( bFlag )
+    if( !cell )
     {
-        bFlag = !bFlag;
-        
-        UINib * nib = [UINib nibWithNibName:@"MyTableViewCell" bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:strId];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:strCellId];
+    }
+    else
+    {
+        for( UIView * view in [cell.contentView subviews] )
+        {
+            [view removeFromSuperview];
+        }
     }
     
-    MyTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:strId];
-    ///cell.title.text = [NSString stringWithFormat:@"title:%ld",indexPath.row];
-    
-    
-    return  cell;
-     */
-    static NSString * strId = @"MyTableViewCell";
-    
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:strId];
-    
-    if( cell == nil )
-    {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:strId];
-    }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"---%d---",indexPath.row];
-    
+    NSLog(@"---row:%d",indexPath.row);
+
+    MyTableCell * cellView = [[MyTableCell alloc]initWithListInfo:[_listArray objectAtIndex:indexPath.row]];
+    [cell.contentView addSubview:cellView];
     
     
     return cell;

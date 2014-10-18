@@ -1,24 +1,24 @@
 //
-//  FirstViewController.m
+//  DetailViewController.m
 //  care
 //
-//  Created by zhuang chaoxiao on 14-10-13.
+//  Created by zhuang chaoxiao on 14-10-18.
 //  Copyright (c) 2014年 zhuang chaoxiao. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "DetailViewController.h"
+#import "dataStruct.h"
 
-@interface FirstViewController ()
+
+@interface DetailViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.view.backgroundColor = [UIColor grayColor];
 }
 
 - (void)didReceiveMemoryWarning {

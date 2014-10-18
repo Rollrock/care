@@ -11,6 +11,8 @@
 
 #define DEVICE_VER_7  ([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0 ? YES:NO)
 
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 #define NAVIGATION_BAR_HEIGHT 44.0f
 #define CUSTOM_TAB_BAR_HEIGHT 60.0f
@@ -30,5 +32,19 @@
 #define CELL_HEIGHT  75.0f
 
 @interface dataStruct : NSObject
+
+@end
+
+
+@interface ListInfo : NSObject
+
+@property(nonatomic,strong) NSString * cate;
+@property(nonatomic,strong) NSString * brand;
+@property(nonatomic,strong) NSString * detailUrl;
+@property(nonatomic,weak)   NSNumber * level;
+@property(nonatomic,strong) NSString * time;
+@property(nonatomic,strong) NSString * title;
+
+-(void)parseDict:(NSDictionary*)dict;
 
 @end

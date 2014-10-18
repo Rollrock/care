@@ -21,7 +21,7 @@
     if (self) {
         // Custom initialization
         
-        self.view.backgroundColor = [UIColor redColor];
+        self.view.backgroundColor = [UIColor grayColor];
         
     }
     return self;
@@ -61,13 +61,8 @@
 
 -(void)initSubViewController
 {
-    _firstViewC = [[FirstViewController alloc]initWithNibName:@"FirstViewController" bundle:nil];
+    _firstViewC = [[FirstViewController alloc]initWithNibName:nil bundle:nil];
     _firstNav = [[UINavigationController alloc]init];
-    
-    if( DEVICE_VER_7 == NO )
-    {
-    _firstNav.view.frame = CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height - CUSTOM_TAB_BAR_HEIGHT - STATUS_BAR_HEIGHT + CUSTOM_TAB_BAR_OFFSET+20);
-    }
     
     _firstViewC.title = @"乐园简介";
     
@@ -76,25 +71,14 @@
     
     _secondViewC = [[SecondViewController alloc]initWithNibName:nil bundle:nil];
     _secondNav = [[UINavigationController alloc]init];
-    if( DEVICE_VER_7 == NO )
-    {
-        _secondNav.view.frame = CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height - CUSTOM_TAB_BAR_HEIGHT - STATUS_BAR_HEIGHT + CUSTOM_TAB_BAR_OFFSET+20);
-    }
-    //
     _secondViewC.title = @"旅游攻略";
     
     [_secondNav pushViewController:_secondViewC animated:NO];
     ////////////////////////////////////////////////////////////////////////////////////////////////
     
     
-    
-    
     _centerViewC = [[CenterViewController alloc]initWithNibName:nil bundle:nil];
     _centerNav = [[UINavigationController alloc]init];
-    if( DEVICE_VER_7 == NO )
-    {
-        _centerNav.view.frame = CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height - CUSTOM_TAB_BAR_HEIGHT - STATUS_BAR_HEIGHT + CUSTOM_TAB_BAR_OFFSET+20);
-    }
     _centerViewC.title = @"乐园详情";
     
     [_centerNav pushViewController:_centerViewC animated:NO];
@@ -103,10 +87,6 @@
     
     _thirdViewC = [[ThirdViewController alloc]initWithNibName:nil bundle:nil];
     _thirdNav = [[UINavigationController alloc]init];
-    if( DEVICE_VER_7 == NO )
-    {
-        _thirdNav.view.frame = CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height - CUSTOM_TAB_BAR_HEIGHT - STATUS_BAR_HEIGHT + CUSTOM_TAB_BAR_OFFSET+20);
-    }
     _thirdViewC.title = @"周边旅游推荐";
     
     [_thirdNav pushViewController:_thirdViewC animated:NO];
