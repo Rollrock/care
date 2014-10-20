@@ -12,6 +12,7 @@
 #import "JSONKit.h"
 #import "EGORefreshTableHeaderView.h"
 #import "DetailViewController.h"
+#import "RockWaitView.h"
 
 
 #define TARGET_URL   @"http://www.999dh.net/CareAbout/HotList.txt"
@@ -26,6 +27,8 @@
     NSMutableData * _data;
     
     NSMutableArray * _listArray;
+    
+    RockWaitView * _waitView;
 }
 
 @end
@@ -42,6 +45,9 @@
     
     
     [self startRequest];
+    
+    
+    _waitView = [[RockWaitView alloc]initWithParentView:self.view withStr:@"加载中...."];
 }
 
 
@@ -101,6 +107,7 @@
         }
     }
     
+    [_waitView dismiss];
     
     [_tabView reloadData];
 }
@@ -196,10 +203,11 @@
     ListInfo * info = [_listArray objectAtIndex:indexPath.row];
     
     DetailViewController * vc = [[DetailViewController alloc]initWithNibName:nil bundle:nil];
-    //vc.navigationController.title = info.title;
     vc.strUrl = info.detailUrl;
     
     [self.navigationController pushViewController:vc animated:YES];
+    
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -36,15 +36,9 @@
     
     CGRect rect;
     
-    if( DEVICE_VER_7 == YES )
-    {
-        rect = CGRectMake(0,  [[UIScreen mainScreen] bounds].size.height -STATUS_BAR_HEIGHT-CUSTOM_TAB_BAR_HEIGHT, 320, CUSTOM_TAB_BAR_HEIGHT);
+    rect = CGRectMake(0,  [[UIScreen mainScreen] bounds].size.height-CUSTOM_TAB_BAR_HEIGHT, 320, CUSTOM_TAB_BAR_HEIGHT);
 
-    }
-    else
-    {
-        rect = CGRectMake(0,  [[UIScreen mainScreen] bounds].size.height -STATUS_BAR_HEIGHT-CUSTOM_TAB_BAR_HEIGHT-20, 320, CUSTOM_TAB_BAR_HEIGHT);
-    }
+    
     
     
     _tabbarView = [[tabbarView alloc]initWithFrame:rect];
@@ -96,10 +90,8 @@
     
     _fourthViewC = [[FourthViewController alloc]initWithNibName:nil bundle:nil];
     _fourthNav = [[UINavigationController alloc]init];
-    if( DEVICE_VER_7 == NO )
-    {
-        _fourthNav.view.frame = CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height - CUSTOM_TAB_BAR_HEIGHT - STATUS_BAR_HEIGHT + CUSTOM_TAB_BAR_OFFSET+20);
-    }
+  
+    
     _fourthViewC.title = @"设置";
     
     [_fourthNav pushViewController:_fourthViewC animated:NO];

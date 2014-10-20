@@ -14,11 +14,13 @@
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
+
+#define STATUS_BAR_HEIGHT 20.0f
 #define NAVIGATION_BAR_HEIGHT 44.0f
 #define CUSTOM_TAB_BAR_HEIGHT 60.0f
 #define CUSTOM_TAB_BAR_OFFSET 11.0f //这里的11是因为中间center与其他四个tabitem的偏移
 
-#define STATUS_BAR_HEIGHT 0.0f
+//#define STATUS_BAR_HEIGHT 0.0f
 
 
 #if TARGET_IPHONE_SIMULATOR

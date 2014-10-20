@@ -10,6 +10,7 @@
 
 @interface DetailViewController : UIViewController
 
-@property( copy,nonatomic) NSString * strUrl;
+
+@property(copy,nonatomic) NSString * strUrl;
 
 @end
