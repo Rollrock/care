@@ -19,6 +19,13 @@
 		480B37A019F32D7E0087BD6C /* level_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B379C19F32D7E0087BD6C /* level_3.png */; };
 		480B37A119F32D7E0087BD6C /* level_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B379D19F32D7E0087BD6C /* level_4.png */; };
 		480B37A419F403770087BD6C /* RockWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B37A319F403770087BD6C /* RockWaitView.m */; };
+		480B37B219F5455F0087BD6C /* QBPlasticPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B37A719F5455F0087BD6C /* QBPlasticPopupMenu.m */; };
+		480B37B319F5455F0087BD6C /* QBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B37A919F5455F0087BD6C /* QBPopupMenu.m */; };
+		480B37B419F5455F0087BD6C /* QBPopupMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B37AB19F5455F0087BD6C /* QBPopupMenuItem.m */; };
+		480B37B519F5455F0087BD6C /* QBPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B37AD19F5455F0087BD6C /* QBPopupMenuItemView.m */; };
+		480B37B619F5455F0087BD6C /* QBPopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B37AF19F5455F0087BD6C /* QBPopupMenuOverlayView.m */; };
+		480B37B719F5455F0087BD6C /* QBPopupMenuPagenatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 480B37B119F5455F0087BD6C /* QBPopupMenuPagenatorView.m */; };
+		480B37BC19F54C5B0087BD6C /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 480B37B919F54C5B0087BD6C /* libWeChatSDK.a */; };
 		481533C619ED5C6C00A98631 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 481533C319ED5C6C00A98631 /* EGOCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		481533C719ED5C6C00A98631 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 481533C519ED5C6C00A98631 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		481533C919ED61C200A98631 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 481533C819ED61C200A98631 /* blueArrow@2x.png */; };
@@ -84,6 +91,21 @@
 		480B379D19F32D7E0087BD6C /* level_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_4.png; sourceTree = "<group>"; };
 		480B37A219F403770087BD6C /* RockWaitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RockWaitView.h; sourceTree = "<group>"; };
 		480B37A319F403770087BD6C /* RockWaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RockWaitView.m; sourceTree = "<group>"; };
+		480B37A619F5455F0087BD6C /* QBPlasticPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPlasticPopupMenu.h; sourceTree = "<group>"; };
+		480B37A719F5455F0087BD6C /* QBPlasticPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPlasticPopupMenu.m; sourceTree = "<group>"; };
+		480B37A819F5455F0087BD6C /* QBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenu.h; sourceTree = "<group>"; };
+		480B37A919F5455F0087BD6C /* QBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenu.m; sourceTree = "<group>"; };
+		480B37AA19F5455F0087BD6C /* QBPopupMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuItem.h; sourceTree = "<group>"; };
+		480B37AB19F5455F0087BD6C /* QBPopupMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuItem.m; sourceTree = "<group>"; };
+		480B37AC19F5455F0087BD6C /* QBPopupMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuItemView.h; sourceTree = "<group>"; };
+		480B37AD19F5455F0087BD6C /* QBPopupMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuItemView.m; sourceTree = "<group>"; };
+		480B37AE19F5455F0087BD6C /* QBPopupMenuOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuOverlayView.h; sourceTree = "<group>"; };
+		480B37AF19F5455F0087BD6C /* QBPopupMenuOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuOverlayView.m; sourceTree = "<group>"; };
+		480B37B019F5455F0087BD6C /* QBPopupMenuPagenatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuPagenatorView.h; sourceTree = "<group>"; };
+		480B37B119F5455F0087BD6C /* QBPopupMenuPagenatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuPagenatorView.m; sourceTree = "<group>"; };
+		480B37B919F54C5B0087BD6C /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		480B37BA19F54C5B0087BD6C /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		480B37BB19F54C5B0087BD6C /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		481533C219ED5C6C00A98631 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
 		481533C319ED5C6C00A98631 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
 		481533C419ED5C6C00A98631 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
@@ -134,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480B37BC19F54C5B0087BD6C /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,9 +198,40 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		480B37A519F5455F0087BD6C /* QBPopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				480B37A619F5455F0087BD6C /* QBPlasticPopupMenu.h */,
+				480B37A719F5455F0087BD6C /* QBPlasticPopupMenu.m */,
+				480B37A819F5455F0087BD6C /* QBPopupMenu.h */,
+				480B37A919F5455F0087BD6C /* QBPopupMenu.m */,
+				480B37AA19F5455F0087BD6C /* QBPopupMenuItem.h */,
+				480B37AB19F5455F0087BD6C /* QBPopupMenuItem.m */,
+				480B37AC19F5455F0087BD6C /* QBPopupMenuItemView.h */,
+				480B37AD19F5455F0087BD6C /* QBPopupMenuItemView.m */,
+				480B37AE19F5455F0087BD6C /* QBPopupMenuOverlayView.h */,
+				480B37AF19F5455F0087BD6C /* QBPopupMenuOverlayView.m */,
+				480B37B019F5455F0087BD6C /* QBPopupMenuPagenatorView.h */,
+				480B37B119F5455F0087BD6C /* QBPopupMenuPagenatorView.m */,
+			);
+			path = QBPopupMenu;
+			sourceTree = "<group>";
+		};
+		480B37B819F54C5B0087BD6C /* WeChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				480B37B919F54C5B0087BD6C /* libWeChatSDK.a */,
+				480B37BA19F54C5B0087BD6C /* WXApi.h */,
+				480B37BB19F54C5B0087BD6C /* WXApiObject.h */,
+			);
+			path = WeChatSDK;
+			sourceTree = "<group>";
+		};
 		481533C019ED5C6C00A98631 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				480B37B819F54C5B0087BD6C /* WeChatSDK */,
+				480B37A519F5455F0087BD6C /* QBPopupMenu */,
 				480B378919F2B9DC0087BD6C /* SDWebImage */,
 				480B374519F1504B0087BD6C /* JsonKit */,
 				481533C119ED5C6C00A98631 /* EGO */,
@@ -426,17 +480,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				48B66E2019EC054500751B08 /* dataStruct.m in Sources */,
+				480B37B419F5455F0087BD6C /* QBPopupMenuItem.m in Sources */,
 				48B66E1D19EC00ED00751B08 /* SecondViewController.m in Sources */,
 				48B66E2619EC05D400751B08 /* ThirdViewController.m in Sources */,
 				480B379819F2B9DC0087BD6C /* SDWebImageManager.m in Sources */,
 				48B66DB519EACA7E00751B08 /* AppDelegate.m in Sources */,
 				48B66E1719EBFF9000751B08 /* MainViewController.m in Sources */,
+				480B37B719F5455F0087BD6C /* QBPopupMenuPagenatorView.m in Sources */,
+				480B37B319F5455F0087BD6C /* QBPopupMenu.m in Sources */,
 				480B378819F2B8170087BD6C /* DetailViewController.m in Sources */,
 				48B66DB219EACA7E00751B08 /* main.m in Sources */,
 				480B379619F2B9DC0087BD6C /* SDImageCache.m in Sources */,
 				480B374819F1504B0087BD6C /* JSONKit.m in Sources */,
+				480B37B219F5455F0087BD6C /* QBPlasticPopupMenu.m in Sources */,
 				480B379919F2B9DC0087BD6C /* UIImageView+WebCache.m in Sources */,
+				480B37B519F5455F0087BD6C /* QBPopupMenuItemView.m in Sources */,
 				48B66E2919EC05E600751B08 /* FourthViewController.m in Sources */,
+				480B37B619F5455F0087BD6C /* QBPopupMenuOverlayView.m in Sources */,
 				480B37A419F403770087BD6C /* RockWaitView.m in Sources */,
 				4838C1E319F14D0800A6843F /* FirstViewController.m in Sources */,
 				481533C619ED5C6C00A98631 /* EGOCache.m in Sources */,
@@ -562,6 +622,10 @@
 				INFOPLIST_FILE = care/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/care/3rd/WeChatSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -574,6 +638,10 @@
 				INFOPLIST_FILE = care/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/care/3rd/WeChatSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

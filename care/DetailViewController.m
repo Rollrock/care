@@ -11,6 +11,8 @@
 #import "UIImageView+WebCache.h"
 #import "dataStruct.h"
 #import "RockWaitView.h"
+#import "QBPopupMenu.h"
+#import "AppDelegate.h"
 
 @interface DetailViewController ()<NSURLConnectionDataDelegate,NSURLConnectionDelegate>
 {
@@ -19,7 +21,7 @@
     NSMutableData * _data;
     
     RockWaitView * _waitView;
-    
+    QBPopupMenu *_popupMenu;
 }
 
 @end
@@ -35,6 +37,28 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self startRequest];
+    
+}
+
+
+- (void)shareWithWeChat
+{
+    //NSLog(@"*** action");
+    
+    AppDelegate * app = [[UIApplication sharedApplication] delegate];
+    [app shareWithText:@"啊哈哈哈哈"];
+}
+
+
+-(void)layoutQBPopMenu
+{
+    QBPopupMenuItem *item = [QBPopupMenuItem itemWithTitle:@"微信分享" target:self action:@selector(shareWithWeChat)];
+    //QBPopupMenuItem *item5 = [QBPopupMenuItem itemWithImage:[UIImage imageNamed:@"clip"] target:self action:@selector(action)];
+    //QBPopupMenuItem *item6 = [QBPopupMenuItem itemWithTitle:@"Delete" image:[UIImage imageNamed:@"trash"] target:self action:@selector(action)];
+    NSArray *items = @[item];
+    
+    _popupMenu = [[QBPopupMenu alloc] initWithItems:items];
+    _popupMenu.highlightedColor = [[UIColor colorWithRed:0 green:0.478 blue:1.0 alpha:1.0] colorWithAlphaComponent:0.8];
     
 }
 
@@ -118,6 +142,15 @@
         }
     }
     
+    {
+        rect = CGRectMake(250, 10, 50, 30);
+        UIButton * btnShare = [[UIButton alloc]initWithFrame:rect];
+        [btnShare setTitle:@"分享" forState:UIControlStateNormal];
+        btnShare.layer.cornerRadius = 7;
+        btnShare.backgroundColor = [UIColor orangeColor];
+        [btnShare addTarget:self action:@selector(btnShareClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [scView addSubview:btnShare];
+    }
     
     yPos += 20;
     //图片
@@ -163,7 +196,22 @@
         }
     }
     
+    [self layoutQBPopMenu];
+    
     scView.contentSize = CGSizeMake(320, yPos);
+    
+}
+
+-(void)btnShareClicked:(UIButton*)btn
+{
+    for(UIView * view  in [self.view subviews] )
+    {
+        if( [view isKindOfClass:[UIScrollView class]] )
+        {
+            [_popupMenu showInView:view targetRect:btn.frame animated:YES];
+            break;
+        }
+    }
     
 }
 

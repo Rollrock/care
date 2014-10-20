@@ -8,9 +8,9 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "WXApi.h"
 
-
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 
 @end
 
@@ -27,7 +27,78 @@
     [self.window makeKeyAndVisible];
     
     
+    //
+    [WXApi registerApp:@"wx8ae0a52d0b488e34"];
+    
     return YES;
+}
+
+
+-(BOOL)application:(UIApplication*)application handleOpenURL:(NSURL *)url
+{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+-(BOOL)application:(UIApplication*)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+
+-(void) onReq:(BaseReq*)req
+{
+    if([req isKindOfClass:[ShowMessageFromWXReq class]])
+    {
+        ShowMessageFromWXReq* temp = (ShowMessageFromWXReq*)req;
+        WXMediaMessage *msg = temp.message;
+        
+        //显示微信传过来的内容
+        WXAppExtendObject *obj = msg.mediaObject;
+        
+        //NSString *strMsg = [NSString stringWithFormat:@"标题：%@ \n内容：%@ \n附带信息：%@ \n缩略图:%u bytes\n\n", msg.title, msg.description, obj.extInfo, msg.thumbData.length];
+        
+        // NSLog(@"strMsg:%@",strMsg);
+        
+    }
+}
+
+-(void) onResp:(BaseResp*)resp
+{
+    if([resp isKindOfClass:[SendMessageToWXResp class]])
+    {
+        NSString *strMsg = [NSString stringWithFormat:@"errcode:%d", resp.errCode];
+        
+        NSLog(@"strMsg:%@",strMsg);
+        
+        
+        if( resp.errCode == 0 )
+        {
+            //发送成功
+        }
+        else if( resp.errCode == -2 )
+        {
+            //主动取消
+        }
+    }
+}
+
+-(void) shareWithText:(NSString*)text
+{
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = text;
+    [message setThumbImage:[UIImage imageNamed:@"res2.png"]];
+    
+    WXWebpageObject *ext = [WXWebpageObject object];
+    ext.webpageUrl = @"https://itunes.apple.com/cn/app/shang-hai-lu-you-gong-e-zhi/id804556227?mt=8";
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneTimeline;
+    
+    [WXApi sendReq:req];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
