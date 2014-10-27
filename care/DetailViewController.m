@@ -22,6 +22,8 @@
     
     RockWaitView * _waitView;
     QBPopupMenu *_popupMenu;
+    
+    UIScrollView * scrollView;
 }
 
 @end
@@ -34,9 +36,19 @@
     
     _waitView = [[RockWaitView alloc]initWithParentView:self.view withStr:@"加载中... "];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor grayColor];
     
     [self startRequest];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"scrollView:%f--%f---%f",scrollView.frame.origin.x,scrollView.frame.origin.y,scrollView.frame.size.height);
+    
+    NSLog(@"--View:%f--%f---%f",self.view.frame.origin.x,self.view.frame.origin.y,self.view.frame.size.height);
+    
+    scrollView.contentInset = UIEdgeInsetsMake(0,0,0,0);
     
 }
 
@@ -77,6 +89,8 @@
     
     UIScrollView * scView = [[UIScrollView alloc]initWithFrame:rect];
     [self.view addSubview:scView];
+    
+    scrollView = scView;
     
     //
     {
@@ -179,7 +193,7 @@
             rect = CGRectMake(10, yPos, 300, 18);
             UILabel * lab = [[UILabel alloc]initWithFrame:rect];
             lab.text = [subDic objectForKey:@"title"];
-            lab.font = [UIFont boldSystemFontOfSize:20];
+            lab.font = [UIFont boldSystemFontOfSize:19];
             [scView addSubview:lab];
             yPos += 20;
             

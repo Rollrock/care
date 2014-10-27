@@ -19,6 +19,13 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor orangeColor];
+    
+    CGRect rect = CGRectMake(100, 100, 100, 100);
+    UILabel * lab = [[UILabel alloc]initWithFrame:rect];
+    lab.text = @"aaaa";
+    [self.view addSubview:lab];
+    lab.backgroundColor = [UIColor grayColor];
+    
 }
 
 - (void)didReceiveMemoryWarning {

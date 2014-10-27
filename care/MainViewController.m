@@ -39,8 +39,6 @@
     rect = CGRectMake(0,  [[UIScreen mainScreen] bounds].size.height-CUSTOM_TAB_BAR_HEIGHT, 320, CUSTOM_TAB_BAR_HEIGHT);
 
     
-    
-    
     _tabbarView = [[tabbarView alloc]initWithFrame:rect];
     
     _tabbarView.delegate = self;

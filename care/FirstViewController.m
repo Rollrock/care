@@ -41,7 +41,7 @@
     
     [self layoutTableView];
     
-    [self layoutEgoView];
+    //[self layoutEgoView];
     
     
     [self startRequest];
